@@ -2,7 +2,7 @@
 #Suit, Rank, value
 import random
 
-suit = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 ranks = ('Two', "Three", 'Four', 'Five', 'Six','Seven','Eight','Nine','Ten','Jack', 'Queen','King','Ace')
 
 values = {'Two':2, 'Three':3, 'Four':4,'Five':5,'Six':6, 'Seven':7, 'Eight':8,
@@ -22,5 +22,24 @@ two_heart = Card("Hearts", "Two")
 
 #Deck
 class Deck():
-    
+
+    def __init__(self):
+
+        self.all_cards = []
+
+        for suit in suits:
+            for rank in ranks:
+                created_card = Card(suit, rank)
+
+                self.all_cards.append(created_card)
+
+    def shuffle(self):
+
+        random.shuffle(self.all_cards)
+
+
+new_deck = Deck()
+
+for card_object in new_deck.all_cards:
+    print(card_object)
 #Player
