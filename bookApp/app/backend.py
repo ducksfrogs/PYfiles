@@ -3,7 +3,8 @@ import sqlite3
 def connect():
     conn = sqlite3.connect("books.db")
     cur = conn.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS book (id INTGER PRIMARY KEY AUTOINCREMENT, title TEXT, author TEXT, year INTGER, isbn INTGER )")
+    cur.execute("CREATE TABLE IF NOT EXISTS book (id INTEGER PRIMARY KEY, title TEXT, author TEXT, year INTGER, isbn INTGER )")
+
     conn.commit()
     conn.close()
 
@@ -43,7 +44,5 @@ def delete(id):
 
 
 
-connect()
-delete(None)
-
+delete(3)
 print(view())
