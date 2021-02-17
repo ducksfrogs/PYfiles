@@ -20,5 +20,9 @@ def translate(word):
 
 word = input("Enter a word ")
 
-
-print(translate(word))
+li = translate(word)
+if type(li) == list:
+    for i in li:
+        print(i)
+else:
+    print(li)
