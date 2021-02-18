@@ -1,5 +1,4 @@
 import json
-from difflib import SequenceMatcher
 from difflib import get_close_matches
 
 
